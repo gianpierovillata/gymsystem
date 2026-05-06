@@ -3,7 +3,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-def inicio(request):
+def bienvenida(request):
     return HttpResponse("Bienvenidos usuarios")
 
 def listado_usuarios(request):
