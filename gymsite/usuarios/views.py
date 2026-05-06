@@ -5,3 +5,7 @@ from django.http import HttpResponse
 
 def inicio(request):
     return HttpResponse("Bienvenidos usuarios")
+
+def listado_usuarios(request):
+    usuarios = ["Usuario 1", "Usuario 2", "Usuario 3"]
+    return HttpResponse(f"Listado de usuarios: {', '.join(usuarios)}")
