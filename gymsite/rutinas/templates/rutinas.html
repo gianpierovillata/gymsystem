@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Rutinas</title>
+
+    </head>
+
+<body>
+    <h1>Rutinas</h1>
+    <ul>
+        {% for rutina in rutinas %}
+            <div>
+                <h2>{{ rutina.nombre }}</h2>
+                <p>{{ rutina.descripcion }}</p>
+                <p>Objetivo: {{ rutina.objetivo }}</p>
+                <p>Usuario: {{ rutina.usuario.nombre }}</p>
+                <h3>Ejercicios:</h3>
+                <ul>
+                    {% for ejercicio in rutina.ejercicios.all %}
+                        <li>
+                            <p>{{ ejercicio.ejercicio.nombre }}</p>
+                            <p>Seriest: {{ ejercicio.series }}</p>
+                            <p>Repeticiones: {{ ejercicio.repeticiones }}</p>
+                            <p>Descanso: {{ ejercicio.descanso }}</p>
+                            <p>Intensidad: {{ ejercicio.intensidad }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        {% endfor %}
+</body>
+</html>
