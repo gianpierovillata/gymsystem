@@ -15,15 +15,15 @@
                 <p>Usuario: {{ rutina.usuario.nombre }}</p>
                 <h3>Ejercicios:</h3>
                 <ul>
-                    {% for ejercicio in rutina.ejercicios.all %}
+                    {% for ejercicio in rutina.ListaEjercicios.all %}
                         <li>
-                            <p>{{ ejercicio.ejercicio.nombre }}</p>
-                            <p>Seriest: {{ ejercicio.series }}</p>
+                            <p>Ejercicio: {{ ejercicio.ejercicio.nombre }}</p>
+                            <p>Series: {{ ejercicio.series }}</p>
                             <p>Repeticiones: {{ ejercicio.repeticiones }}</p>
-                            <p>Descanso: {{ ejercicio.descanso }}</p>
-                            <p>Intensidad: {{ ejercicio.intensidad }}</p>
+                            <p>Descanso: {{ ejercicio.descanso }} segundos</p>
+                            <p>Intensidad: {{ ejercicio.intensidad }}%</p>
                         </li>
-                    {% endfor %}
+                    {% endfor %}    
                 </ul>
             </div>
 

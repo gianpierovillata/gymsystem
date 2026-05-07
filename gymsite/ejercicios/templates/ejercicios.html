@@ -5,5 +5,14 @@
 <body>
     <h1>Ejercicios</h1>
     <p>Lista de ejercicios disponibles.</p>
+    <ul>
+        {% for ejercicio in ejercicios %}
+            <li>
+                <h2>{{ ejercicio.nombre }}</h2>
+                <p>{{ ejercicio.descripcion }}</p>
+                <p>Musculo: {{ ejercicio.grupomuscular }}</p>
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
