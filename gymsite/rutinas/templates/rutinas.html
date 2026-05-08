@@ -6,7 +6,7 @@
 
 <body>
     <h1>Rutinas</h1>
-    <ul>
+    
         {% for rutina in rutinas %}
             <div>
                 <h2>{{ rutina.nombre }}</h2>
@@ -14,7 +14,7 @@
                 <p>Objetivo: {{ rutina.objetivo }}</p>
                 <p>Usuario: {{ rutina.usuario.nombre }}</p>
                 <h3>Ejercicios:</h3>
-                <ul>
+          <!--       <ul>
                     {% for ejercicio in rutina.ListaEjercicios.all %}
                         <li>
                             <p>Ejercicio: {{ ejercicio.ejercicio.nombre }}</p>
@@ -24,7 +24,7 @@
                             <p>Intensidad: {{ ejercicio.intensidad }}%</p>
                         </li>
                     {% endfor %}    
-                </ul>
+                </ul> -->
             </div>
 
         {% endfor %}

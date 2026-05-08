@@ -1,0 +1,20 @@
+
+<html>
+    <body>        
+        <h1>Bienvenidos usuarios</h1>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.role }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

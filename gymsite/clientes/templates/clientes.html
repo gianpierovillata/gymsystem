@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes</title>
 </head>
+
 <body>
     <h1>Bienvenidos a la pagina de clientes</h1>
 
-    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"    >
+    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
         <tr>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Fecha Nacimiento</th>
+            <th>Edad</th>
+            <th>Telefono</th>
             <th>Email</th>
         </tr>
+        {% for cliente in clientes %}
+        
         <tr>
-            <td>Piero</td>
-            <td>Gomez</td>
-            <td>piero@gomez.com</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.apellido }}</td>
+            <td>{{ cliente.fecha_nacimiento }}</td>
+            <td>{{ cliente.edad }}</td>
+            <td>{{ cliente.telefono }}</td>
+            {% if clientes.Usuario.nombre != None %}
+            <td>{{ cliente.Usuario.nombre }}</td>
+              {% else %}
+            <td>No disponible</td>
+              {% endif %}
+        </tr>
+
+      
+        {% endfor %}
     </table>
-    
+
 </body>
+
 </html>

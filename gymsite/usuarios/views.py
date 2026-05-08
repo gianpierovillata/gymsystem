@@ -1,13 +1,12 @@
 
 from django.http import HttpResponse
 from django.template import loader
+from .models import Usuario
 # Create your views here.
 
 
-def bienvenida(request):
-    template = loader.get_template('bienvenida.html')
-    return HttpResponse(template.render())
+def index(request):
+    usuarios = Usuario.objects.all()
+    template = loader.get_template('usuarios.html')
+    return HttpResponse(template.render({'usuarios': usuarios}))
 
-def listado_usuarios(request):
-    usuarios = ["Usuario 1", "Usuario 2", "Usuario 3"]
-    return HttpResponse(f"Listado de usuarios: {', '.join(usuarios)}")
