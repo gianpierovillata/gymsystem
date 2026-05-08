@@ -1,5 +1,6 @@
 from django.db import models
 from usuarios.models import  Usuario
+from entrenadores.models import Entrenador
 
 # Create your models here.
 
@@ -12,7 +13,8 @@ class Cliente(models.Model):
     peso = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     altura = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
 
-    Usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    entrenador = models.ForeignKey(Entrenador, on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"

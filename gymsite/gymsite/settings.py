@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'clientes',
     'ejercicios',
     'rutinas',
+    'entrenadores',
 ]
 
 MIDDLEWARE = [

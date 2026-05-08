@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Entrenadores</title>
+</head>
+<body>
+    <h1>Entrenadores</h1>
+    <p>Lista de entrenadores disponibles.</p>
+    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Especialidad</th>
+            <th>Telefono</th>
+            <th>Experiencia</th>
+            <th>Lugar Trabajo</th>
+        </tr>
+        {% for entrenador in entrenadores %}
+        <tr>
+            <td>{{ entrenador.nombre }}</td>
+            <td>{{ entrenador.apellido }}</td>
+            <td>{{ entrenador.fecha_nacimiento }}</td>
+            <td>{{ entrenador.especialidad }}</td>
+            <td>{{ entrenador.telefono }}</td>
+            <td>{{ entrenador.experiencia }}</td>
+            <td>{{ entrenador.lugar_trabajo }}</td>
+        </tr>
+        {% endfor %}
+</html>
