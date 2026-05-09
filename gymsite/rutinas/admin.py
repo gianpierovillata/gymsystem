@@ -9,5 +9,5 @@ class ListaEjerciciosInline(admin.TabularInline):
 
 @admin.register(Rutina)
 class RutinaAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'objetivo', 'usuario')
+    list_display = ('nombre', 'objetivo', 'cliente')
     inlines = [ListaEjerciciosInline]

@@ -1,5 +1,5 @@
 from django.db import models
-from usuarios.models import Usuario
+from clientes.models import Cliente
 from ejercicios.models import Ejercicio
 
 
@@ -11,7 +11,7 @@ class Rutina(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField()
     objetivo = models.CharField(max_length=100)   
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre
