@@ -1,11 +1,11 @@
-<html>
-<head>
-    <title>Ejercicios</title>
-</head>
-<body>
-    <h1>Ejercicios</h1>
-    <p>Lista de ejercicios disponibles.</p>
-    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+{% extends "base.html" %}
+
+{% block title %}Ejercicios{% endblock %}
+{% block heading %}Ejercicios{% endblock %}
+
+{% block content %}
+    <div class="page-title">Lista de ejercicios disponibles</div>
+    <table>
         <tr>
             <th>Nombre</th>
             <th>Descripción</th>
@@ -15,13 +15,8 @@
         <tr>
             <td>{{ ejercicio.nombre }}</td>
             <td>{{ ejercicio.descripcion }}</td>
-            <td>{{ ejercicio.grupo_muscular }}</td>
+            <td>{{ ejercicio.grupomuscular }}</td>
         </tr>
         {% endfor %}
-
     </table>
-    
-      
-    
-</body>
-</html>
+{% endblock %}

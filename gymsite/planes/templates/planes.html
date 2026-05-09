@@ -1,10 +1,10 @@
-<html>
-<head>
-    <title>Planes</title>
-</head>
-<body>
-    <h1>Planes</h1>
-   <table border="1" cellpadding="5" cellspacing="0">
+{% extends "base.html" %}
+
+{% block title %}Planes{% endblock %}
+{% block heading %}Planes{% endblock %}
+
+{% block content %}
+    <table>
         <tr>
             <th>Nombre</th>
             <th>Descripción</th>
@@ -20,10 +20,10 @@
             <td>{{ plan.precio }}</td>
             <td>
                 {% for rutina in plan.rutinas.all %}
-                    {{ rutina.nombre }}{% if not forloop.last %} <br> {% endif %}
+                    {{ rutina.nombre }}{% if not forloop.last %}<br>{% endif %}
                 {% endfor %}
             </td>
         </tr>
         {% endfor %}
-   </table>
-</html>
+    </table>
+{% endblock %}

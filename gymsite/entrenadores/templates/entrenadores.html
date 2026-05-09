@@ -1,11 +1,11 @@
-<html>
-<head>
-    <title>Entrenadores</title>
-</head>
-<body>
-    <h1>Entrenadores</h1>
-    <p>Lista de entrenadores disponibles.</p>
-    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+{% extends "base.html" %}
+
+{% block title %}Entrenadores{% endblock %}
+{% block heading %}Entrenadores{% endblock %}
+
+{% block content %}
+    <div class="page-title">Lista de entrenadores disponibles</div>
+    <table>
         <tr>
             <th>Nombre</th>
             <th>Apellido</th>
@@ -26,4 +26,5 @@
             <td>{{ entrenador.lugar_trabajo }}</td>
         </tr>
         {% endfor %}
-</html>
+    </table>
+{% endblock %}

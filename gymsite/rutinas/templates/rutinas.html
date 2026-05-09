@@ -1,41 +1,31 @@
-<html>
-<head>
-    <title>Rutinas</title>
+{% extends "base.html" %}
 
-    </head>
+{% block title %}Rutinas{% endblock %}
+{% block heading %}Rutinas{% endblock %}
 
-<body>
-    <h1>Rutinas</h1>
-    
-        <caption>Rutinas de entrenamiento</caption><br><br>
+{% block content %}
+    <caption>Rutinas de entrenamiento</caption>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Objetivo</th>              
+            <th>Cliente</th>               
+            <th>Ejercicios</th>
+        </tr>
 
-        
-        <table border="1" cellpadding="5" cellspacing="0">
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Objetivo</th>              
-                <th>Cliente</th>               
-                <th>Listado de ejercicios</th>
-            </tr>
-
-            {% for rutina in rutinas %}
-            
-            <tr>
-                <td>{{ rutina.nombre }}</td>
-                <td>{{ rutina.descripcion }}</td>
-                <td>{{ rutina.objetivo }}</td> 
-                <td>{{ rutina.cliente.nombre }}</td>             
-                <td>
-                    
-                        {% for ejercicio in rutina.ejercicios.all %}
-                            <p>{{ejercicio.series}}/{{ejercicio.repeticiones}}/{{ejercicio.intensidad}}% {{ejercicio.ejercicio.nombre}} {{ejercicio.descanso}}min Desc</p>
-                        {% endfor %}
-                    
-                </td>
-            </tr>
-            {% endfor %}        
-        </table>
-       
-</body>
-</html>
+        {% for rutina in rutinas %}
+        <tr>
+            <td>{{ rutina.nombre }}</td>
+            <td>{{ rutina.descripcion }}</td>
+            <td>{{ rutina.objetivo }}</td> 
+            <td>{{ rutina.cliente.nombre }}</td>             
+            <td>
+                {% for ejercicio in rutina.ejercicios.all %}
+                    <p>{{ejercicio.series}}/{{ejercicio.repeticiones}}/{{ejercicio.intensidad}}% {{ejercicio.ejercicio.nombre}} {{ejercicio.descanso}}min Desc</p>
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}        
+    </table>
+{% endblock %}
