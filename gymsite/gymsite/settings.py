@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'ejercicios',
     'rutinas',
     'entrenadores',
+    'planes',
 ]
 
 MIDDLEWARE = [
