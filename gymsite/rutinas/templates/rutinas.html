@@ -7,26 +7,33 @@
 <body>
     <h1>Rutinas</h1>
     
-        {% for rutina in rutinas %}
-            <div>
-                <h2>{{ rutina.nombre }}</h2>
-                <p>{{ rutina.descripcion }}</p>
-                <p>Objetivo: {{ rutina.objetivo }}</p>
-                <p>Usuario: {{ rutina.usuario.nombre }}</p>
-                <h3>Ejercicios:</h3>
-          <!--       <ul>
-                    {% for ejercicio in rutina.ListaEjercicios.all %}
-                        <li>
-                            <p>Ejercicio: {{ ejercicio.ejercicio.nombre }}</p>
-                            <p>Series: {{ ejercicio.series }}</p>
-                            <p>Repeticiones: {{ ejercicio.repeticiones }}</p>
-                            <p>Descanso: {{ ejercicio.descanso }} segundos</p>
-                            <p>Intensidad: {{ ejercicio.intensidad }}%</p>
-                        </li>
-                    {% endfor %}    
-                </ul> -->
-            </div>
+        <caption>Rutinas de entrenamiento</caption><br><br>
 
-        {% endfor %}
+        
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Objetivo</th>               
+                <th>Listado de ejercicios</th>
+            </tr>
+
+            {% for rutina in rutinas %}
+            
+            <tr>
+                <td>{{ rutina.nombre }}</td>
+                <td>{{ rutina.descripcion }}</td>
+                <td>{{ rutina.objetivo }}</td>             
+                <td>
+                    
+                        {% for ejercicio in rutina.ejercicios.all %}
+                            <p>{{ejercicio.series}}/{{ejercicio.repeticiones}}/{{ejercicio.intensidad}}% {{ejercicio.ejercicio.nombre}} {{ejercicio.descanso}}min Desc</p>
+                        {% endfor %}
+                    
+                </td>
+            </tr>
+            {% endfor %}        
+        </table>
+       
 </body>
 </html>
