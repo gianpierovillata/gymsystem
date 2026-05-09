@@ -14,7 +14,8 @@
             <tr>
                 <th>Nombre</th>
                 <th>Descripción</th>
-                <th>Objetivo</th>               
+                <th>Objetivo</th>              
+                <th>Usuario</th>               
                 <th>Listado de ejercicios</th>
             </tr>
 
@@ -23,7 +24,8 @@
             <tr>
                 <td>{{ rutina.nombre }}</td>
                 <td>{{ rutina.descripcion }}</td>
-                <td>{{ rutina.objetivo }}</td>             
+                <td>{{ rutina.objetivo }}</td> 
+                <td>{{ rutina.usuario.nombre }}</td>             
                 <td>
                     
                         {% for ejercicio in rutina.ejercicios.all %}
