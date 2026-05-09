@@ -1,9 +1,152 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <title>Gym Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYM SYSTEM</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            width: 100%;
+            padding: 40px 20px 30px;
+            text-align: center;
+            border-bottom: 3px solid #ff6b00;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ff6b00, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #888;
+            font-size: 1rem;
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            flex: 1;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #1a1a1a, #111);
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card:hover {
+            border-color: #ff6b00;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.15);
+        }
+
+        .card .icon {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        .card .label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card .desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            color: #444;
+            font-size: 0.85rem;
+            border-top: 1px solid #1a1a1a;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Gym Site</h1>
-    <p>This is the homepage of the Gym Site.</p>
+    <div class="header">
+        <h1>GYM SYSTEM</h1>
+        <p>Gestión integral de tu gimnasio</p>
+    </div>
+
+    <div class="container">
+        <a href="/planes/" class="card">
+            <span class="icon">📋</span>
+            <span class="label">Planes</span>
+            <span class="desc">Administrar planes</span>
+        </a>
+        <a href="/rutinas/" class="card">
+            <span class="icon">💪</span>
+            <span class="label">Rutinas</span>
+            <span class="desc">Gestionar entrenamientos</span>
+        </a>
+        <a href="/ejercicios/" class="card">
+            <span class="icon">🏋️</span>
+            <span class="label">Ejercicios</span>
+            <span class="desc">Catálogo de ejercicios</span>
+        </a>
+        <a href="/entrenadores/" class="card">
+            <span class="icon">👨‍🏫</span>
+            <span class="label">Entrenadores</span>
+            <span class="desc">Staff del gimnasio</span>
+        </a>
+        <a href="/clientes/" class="card">
+            <span class="icon">👥</span>
+            <span class="label">Clientes</span>
+            <span class="desc">Base de miembros</span>
+        </a>
+        <a href="/usuarios/" class="card">
+            <span class="icon">🔐</span>
+            <span class="label">Usuarios</span>
+            <span class="desc">Usuarios del sistema</span>
+        </a>
+        <a href="/admin/" class="card">
+            <span class="icon">⚙️</span>
+            <span class="label">Admin</span>
+            <span class="desc">Panel de administración</span>
+        </a>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 Gym System &mdash; Todos los derechos reservados
+    </div>
 </body>
 </html>
